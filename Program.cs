@@ -1,35 +1,17 @@
-﻿using System.Data;
-
-namespace _07.Account_Balance
+﻿namespace _06.Sequence_of_Numbers_2k___1
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            double totalAmount = 0;
+            int number = int.Parse(Console.ReadLine());
+            int allNumbers = 1;
 
-            while (true)
+            while (allNumbers <= number)
             {
-                string command = Console.ReadLine();
-
-                if (command == "NoMoreMoney")
-                {
-                    break;
-                }
-
-                double amount = double.Parse(command);
-
-                if (amount < 0)
-                {
-                    Console.WriteLine("Invalid operation!");
-                    break;
-                }
-
-                totalAmount += amount;
-                Console.WriteLine($"Increase: {amount:F2}");
+                Console.WriteLine(allNumbers);
+                allNumbers = allNumbers * 2 + 1;
             }
-
-            Console.WriteLine($"Total: {totalAmount:F2}");
         }
     }
 }
