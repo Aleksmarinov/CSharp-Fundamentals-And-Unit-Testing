@@ -1,1 +1,29 @@
+for(int counter = 1; counter < 20; counter += 2){
+Console.WriteLine(counter);
+}
+Console.Read();
 
+
+do while loop exercise 
+int counter = 0;
+do 
+{
+	Console.WriteLine(counter);
+	counter++;
+}while (counter < 5);
+
+Console.Read();
+
+
+int lengthOfText = 0;
+string wholeText = "";
+do
+{
+Console.WriteLine("Please enter your friend's name");
+string nameOfFriend = Console.ReadLine();
+int currentLenght = nameOfFriend.Lenght;
+lenghtOfText += currentLenght;
+wholeText += nameOfFriend;
+} while (lengthOfText < 20);
+Console.WriteLine("That's enough!" + wholeText);
+Console.Read();
