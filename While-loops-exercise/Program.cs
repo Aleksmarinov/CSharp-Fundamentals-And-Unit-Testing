@@ -1,0 +1,14 @@
+﻿int number = int.Parse(Console.ReadLine());
+
+int sum = 0;
+int iterator = 1;
+sum += iterator;
+Console.Write(iterator);
+
+while (iterator < number)
+{
+    iterator++;
+    sum += iterator;
+    Console.Write($"+{iterator}");
+}
+Console.WriteLine($"={sum}");
