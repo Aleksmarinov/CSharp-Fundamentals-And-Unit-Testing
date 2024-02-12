@@ -1,0 +1,38 @@
+// "Facebook" -> 150 лв.
+// "Instagram"-> 100 лв.
+// "Reddit"-> 50 лв.
+
+int openedBrowsers = int.Parse(Console.ReadLine());
+int salary = int.Parse(Console.ReadLine());
+
+for (int i = 0; i < openedBrowsers; i++)
+{
+    string browsers = Console.ReadLine();
+    if (browsers == "Facebook")
+    {
+        salary -= 150;
+    }
+    else if (browsers == "Instagram")
+    {
+        salary -= 100;
+    }
+    else if (browsers == "Reddit")
+    {
+        salary -= 50;
+    }
+
+    if (salary <= 0)
+    {
+        break;
+    }
+}
+
+if (salary > 0)
+{
+    Console.WriteLine($"{salary}");
+}
+else
+{
+    Console.WriteLine("You have lost your salary.");
+}
+
