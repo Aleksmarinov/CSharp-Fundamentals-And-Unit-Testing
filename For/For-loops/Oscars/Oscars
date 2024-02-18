@@ -1,0 +1,30 @@
+string actorName = Console.ReadLine();
+double startingPoints = double.Parse(Console.ReadLine());
+int jury = int.Parse(Console.ReadLine());
+
+double sumPoints = startingPoints;
+bool nominee = false;
+
+for (int i = 0; i < jury; i++)
+{
+    string juryName = Console.ReadLine();
+    double pointsForActors = double.Parse(Console.ReadLine());
+    double pointsTillTheMoment = (juryName.Length * pointsForActors) / 2;
+    sumPoints += pointsTillTheMoment;
+
+    if (sumPoints >= 1250.5)
+    {
+        nominee = true;
+        break;
+    }
+}
+
+if (nominee)
+{
+    Console.WriteLine($"Congratulations, {actorName} got a nominee for leading role with {sumPoints:F1}!");
+}
+else
+{
+    double diff = (1250.5 - sumPoints);
+    Console.WriteLine($"Sorry, {actorName} you need {diff:F1} more!");
+}
