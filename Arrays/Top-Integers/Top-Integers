@@ -1,0 +1,23 @@
+int[] arrays = Console.ReadLine().Split().Select(int.Parse).ToArray();
+
+for (int i = 0; i < arrays.Length; i++)
+{
+     if (i != arrays.Length - 1)
+     {
+        int counter = i + 1;
+        while (arrays[i] > arrays[counter])
+        {
+            if (counter == arrays.Length - 1)
+            {
+                Console.Write(arrays[i] + " ");
+                break;
+            }
+            counter++;
+        }
+     }
+
+     if (i == arrays.Length - 1)
+     {
+        Console.WriteLine(arrays[arrays.Length - 1]);
+     }
+}
