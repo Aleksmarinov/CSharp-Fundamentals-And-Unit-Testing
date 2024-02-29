@@ -1,0 +1,26 @@
+int number = int.Parse(Console.ReadLine());
+
+for (int i = 1; i <= number; i++)
+{
+    int currentNum = i;
+    int sumOfDigits = 0;
+    bool isAllDigitsPrime = true;
+
+    while (currentNum > 0)
+    {
+        int digit = currentNum % 10;
+        currentNum /= 10;
+
+        sumOfDigits += digit;
+
+        if (digit != 2 && digit != 3 && digit != 5 && digit != 7)
+        {
+            isAllDigitsPrime = false;
+        }
+    }
+
+    if (isAllDigitsPrime && sumOfDigits % 2 == 0)
+    {
+        Console.Write(i + " ");
+    }
+}
