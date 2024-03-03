@@ -1,0 +1,35 @@
+using NUnit.Framework;
+using System;
+
+namespace TestApp.UnitTests;
+
+public class FactorialTests
+{
+    [Test]
+    public void Test_CalculateFactorial_InputZero_ReturnsOne()
+    {
+        // Arrange
+        int factorial = 0;
+
+        // Act
+        int actualResult = Factorial.CalculateFactorial(factorial);
+
+        // Assert
+        int expectedResult = 1;
+        Assert.AreEqual(expectedResult, actualResult);
+    }
+
+    [Test]
+    public void Test_CalculateFactorial_InputPositiveNumber_ReturnsCorrectFactorial()
+    {
+        // Arrange
+        int factorial = 7;
+
+        // Act
+        int actualResult = Factorial.CalculateFactorial(factorial);
+
+        // Assert
+        int expectedResult = 5040;
+        Assert.AreEqual(expectedResult, actualResult);
+    }
+}
