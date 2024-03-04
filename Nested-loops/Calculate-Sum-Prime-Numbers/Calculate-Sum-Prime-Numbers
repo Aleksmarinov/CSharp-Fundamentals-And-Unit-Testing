@@ -10,7 +10,7 @@ for (int i = 1; i <= countNumbers; i++)
 
     for (int j = 2; j < digit; j++)
     {
-        if (digit % 2 == 0)
+        if (digit % j == 0)
         {
             isPrime = false;
             break;
