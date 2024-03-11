@@ -1,0 +1,47 @@
+using NUnit.Framework;
+
+namespace TestApp.UnitTests;
+
+public class StringReverseTests
+{
+    [Test]
+    public void Test_Reverse_WhenGivenEmptyString_ReturnsEmptyString()
+    {
+        // Arrange
+        string input = string.Empty;
+
+        // Act
+        string actualResult = StringReverse.Reverse(input);
+
+        // Assert
+        Assert.AreEqual(string.Empty, actualResult);
+    }
+
+    [Test]
+    public void Test_Reverse_WhenGivenSingleCharacterString_ReturnsSameCharacter()
+    {
+        // Arrange
+        string letter = "a";
+
+        // Act
+        string expectedResult = "a";
+        string actualResult = StringReverse.Reverse(letter);
+
+        // Assert
+        Assert.AreEqual(letter, actualResult);
+    }
+
+    [Test]
+    public void Test_Reverse_WhenGivenNormalString_ReturnsReversedString()
+    {
+        // Arrange
+        string input = "XYZ";
+
+        // Act
+        string expectedResult = "ZYX";
+        string actualResult = StringReverse.Reverse(input);
+
+        // Assert
+        Assert.AreEqual(expectedResult, actualResult);
+    }
+}
