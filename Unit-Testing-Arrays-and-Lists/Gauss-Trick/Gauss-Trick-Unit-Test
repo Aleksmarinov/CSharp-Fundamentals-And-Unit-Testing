@@ -1,0 +1,94 @@
+using NUnit.Framework;
+
+using System.Collections.Generic;
+
+namespace TestApp.UnitTests;
+
+public class GaussTrickTests
+{
+    [Test]
+    public void Test_SumPairs_InputIsEmptyList_ShouldReturnEmptyList()
+    {
+        // Arrange
+        List<int> emptyList = new();
+
+        // Act
+        List<int> result = GaussTrick.SumPairs(emptyList);
+
+        // Assert
+        CollectionAssert.AreEqual(emptyList, result);
+    }
+
+    [Test]
+    public void Test_SumPairs_InputHasSingleElement_ShouldReturnSameElement()
+    {
+        // Arrange
+        List<int> numbers = new() { 15 };
+
+        // Act
+        List<int> result = GaussTrick.SumPairs(numbers);
+
+        // Assert
+        CollectionAssert.AreEqual(numbers, result);
+    }
+
+    [Test]
+    public void Test_SumPairs_InputHasEvenCountElements_ShouldReturnSumPairs()
+    {
+        // Arrange
+        //Test with up to 4 elements
+        List<int> numbers = new List<int>() { 2, 4, 6, 8 };
+
+        // Act
+        List<int> result = GaussTrick.SumPairs(numbers);
+
+        // Assert
+        List<int> expected = new List<int>() { 10, 10 };
+        CollectionAssert.AreEqual(result, expected);
+    }
+
+    [Test]
+    public void Test_SumPairs_InputHasOddCountElements_ShouldReturnWithMiddleElement()
+    {
+        //Test with up to 5 elements
+        // Arrange
+        List<int> numbers = new List<int>() { 1, 3, 6, 5, 7 };
+
+        // Act
+        List<int> result = GaussTrick.SumPairs(numbers);
+
+        // Assert
+        List<int> expected = new List<int>() { 8, 8, 6 };
+        CollectionAssert.AreEqual(result, expected);
+    }
+
+    [Test]
+    public void Test_SumPairs_InputHasLargeEvenCountElements_ShouldReturnSumPairs()
+    {
+        //Test with more than 4 elements
+        // Arrange
+        List<int> numbers = new List<int>() { 2, 3, 4, 6, 8, 10, 12, 14 };
+
+        // Act
+        List<int> result = GaussTrick.SumPairs(numbers);
+
+        // Assert
+        List<int> expected = new List<int>() { 16, 15, 14, 14 };
+        CollectionAssert.AreEqual(result, expected);
+    }
+
+    [Test]
+    public void Test_SumPairs_InputHasLargeOddCountElements_ShouldReturnWithMiddleElement()
+    {
+        // Arrange
+        List<int> numbers = new List<int>() { 1, 3, 10, 15, 6, 11, 13 };
+
+        // Act
+        List<int> result = GaussTrick.SumPairs(numbers);
+
+        // Assert
+        List<int> expected = new List<int>() { 14, 14, 16, 15 };
+        CollectionAssert.AreEqual(result, expected);
+
+    }
+}
