@@ -1,0 +1,75 @@
+using NUnit.Framework;
+
+using System.Collections.Generic;
+
+namespace TestApp.UnitTests;
+
+public class MaxNumberTests
+{
+
+    [Test]
+    public void Test_FindMax_InputHasOneElement_ShouldReturnTheElement()
+    {
+        //Arrange
+        List<int> numbers = new List<int> { 77 };
+
+        //Act
+        int result = MaxNumber.FindMax(numbers);
+
+        //Assert
+        Assert.AreEqual(77, result);
+
+    }
+
+    [Test]
+    public void Test_FindMax_InputHasPositiveIntegers_ShouldReturnMaximum()
+    {
+        //Arrange
+        List<int> numbers = new List<int> { 77, 14, 66, 120, 5000, 49 };
+
+        //Act
+        int result = MaxNumber.FindMax(numbers);
+
+        //Assert
+        Assert.AreEqual(5000, result);
+    }
+
+    [Test]
+    public void Test_FindMax_InputHasNegativeIntegers_ShouldReturnMaximum()
+    {
+        //Arrange
+        List<int> numbers = new List<int> { -77, -14, -66, -120, -5000, -49 };
+
+        //Act
+        int result = MaxNumber.FindMax(numbers);
+
+        //Assert
+        Assert.AreEqual(-14, result);
+    }
+
+    [Test]
+    public void Test_FindMax_InputHasMixedIntegers_ShouldReturnMaximum()
+    {
+        //Arrange
+        List<int> numbers = new List<int> { -77, -14, -66, 120, 50, 49 };
+
+        //Act
+        int result = MaxNumber.FindMax(numbers);
+
+        //Assert
+        Assert.AreEqual(120, result);
+    }
+
+    [Test]
+    public void Test_FindMax_InputHasDuplicateMaxValue_ShouldReturnMaximum()
+    {
+        //Arrange
+        List<int> numbers = new List<int> { -77, -14, -66, 100, 50, 100 };
+
+        //Act
+        int result = MaxNumber.FindMax(numbers);
+
+        //Assert
+        Assert.AreEqual(100, result);
+    }
+}
